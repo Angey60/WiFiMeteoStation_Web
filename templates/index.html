@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  </head>
+  <body>
+    <!--div class="container">
+        {% for item in sensors %}
+        <p>{{item.id}} {{item.title}}</p>
+        {% endfor %}
+    </div-->
+    <!--div class="container">
+        {% for item in devices %}
+        <p>{{item.device_id}}  {{item.name}}  {{item.note}}</p>
+        {% endfor %}
+    </div-->
+    <div class="container">
+        {% for item in devicesView %}
+        <p>{{item.device_properties_name}}  {{item.device_properties_note}}  {{item.device_properties_value}}</p>
+        {% endfor %}
+    </div>
+  </body>
+</html>
