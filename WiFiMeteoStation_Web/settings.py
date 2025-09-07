@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'ydb_backend_tests',
+    'WiFiMeteoStation_Web',
     # apps
     'apps.sensors.apps.SensorsConfig',
 ]
@@ -78,7 +78,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ydb_backend_tests.urls'
+ROOT_URLCONF = 'WiFiMeteoStation_Web.urls'
 
 TEMPLATES = [
     {
@@ -103,7 +103,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-WSGI_APPLICATION = 'ydb_backend_tests.wsgi.application'
+WSGI_APPLICATION = 'WiFiMeteoStation_Web.wsgi.application'
 
 
 # Database
