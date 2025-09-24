@@ -15,7 +15,6 @@ def QuerySetConvertToJson(queryset):
     json_dumps = json.dumps(list_of_dicts)
     json_string = json.loads(json_dumps)
     data = json_string
-    #logger.info(data)
     return data
 
 def __init__(self, name, age):
@@ -57,3 +56,7 @@ def index(request):
     request_data = json.loads(request.body)
     rc, mid = mqtt_client.publish(request_data['topic'], request_data['msg'])
     return JsonResponse({'code': rc})'''
+    
+'''
+
+'''
