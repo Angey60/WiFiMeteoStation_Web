@@ -112,9 +112,11 @@ WSGI_APPLICATION = 'WiFiMeteoStation_Web.wsgi.application'
 #os.environ["YDB_ACCESS_TOKEN_CREDENTIALS"] = "t1.9"
 
 os.environ["YDB_NAME"] = "ydb239s"
-os.environ["YDB_ENGINE"] = "ydbBackend.backend"
+#os.environ["YDB_ENGINE"] = "ydbBackend.backend"
+os.environ["YDB_ENGINE"] = "ydb_backend.backend"
 os.environ["YDB_PROTOCOL"] = "grpcs"
 os.environ["YDB_HOST"] = "ydb.serverless.yandexcloud.net"
+#os.environ["YDB_HOST"] = "grpcs://ydb.serverless.yandexcloud.net"
 os.environ["YDB_PORT"] = "2135"
 os.environ["YDB_DATABASE"] = "/ru-central1/b1ghqolluv992uu4cf45/etni9kfd05r4hlmli4ld"
 
