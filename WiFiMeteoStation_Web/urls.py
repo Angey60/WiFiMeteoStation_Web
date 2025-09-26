@@ -40,7 +40,9 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     path("", views.index, name="smarthome"),
     path("yandex_smarthome/", include("yandex_smarthome.urls")),
+    path('admin/', admin.site.urls),
     #path('', include(router.urls)),
     #path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
+# python manage.py createsuperuser

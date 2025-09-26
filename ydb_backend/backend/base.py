@@ -138,14 +138,14 @@ class DatabaseWrapper(BaseDatabaseWrapper):
         """
         try:
             '''with self.connection.cursor() as cursor:
-                cursor.execute("SELECT version()")
+                cursor.execute("SELECT VERSION()")
                 row = cursor.fetchone()
                 if row:
                     parts = row[0].decode("utf-8").split("-")[0].split(".")
                     logger.info(f"parts: {parts}")
                     return tuple(part for part in parts)
                 return None'''
-            return 21
+            return (25,)
         except Error as e:
             logger.error(f"Error while getting version: {e}")
             raise
@@ -155,13 +155,13 @@ class DatabaseWrapper(BaseDatabaseWrapper):
         Raise an error if the database version isn't supported by this
         version of Django.
         """
-        
-        logger.info(f"minimum_database_version: {self.features.minimum_database_version}")
+        # ydb 3.21.12
+        #logger.info(f"minimum_database_version: {self.features.minimum_database_version}")
         
         if (
                 self.features.minimum_database_version is not None
                 and self.get_database_version() != ("main",)
-                and self.get_database_version() < 20 #self.features.minimum_database_version
+                and self.get_database_version() < self.features.minimum_database_version
         ):
             db_version = ".".join(map(str, self.get_database_version()))
             min_db_version = ".".join(map(str, self.features.minimum_database_version))
