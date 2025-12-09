@@ -29,6 +29,15 @@ def index(request):
                                                                                  "device_properties_note", 
                                                                                  "device_properties_value"))
     
+    # Sensors.objects.filter(id="3").delete() # работает
+    # Sensors.objects.filter(id="2").update(title="Hello Hello Hello") # работает
+    # Sensors.objects.create(id="3", title="OK") # работает
+    
+    #q = Sensors.objects.filter(id="1").first()  
+    q = Sensors.objects.filter(title__contains="H")
+    for sensor in q:
+        print(f"{sensor.title}")
+    
     '''  
     with connection.cursor() as cursor:
         cursor.execute("SELECT * FROM view_devices")

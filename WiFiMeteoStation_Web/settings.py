@@ -14,6 +14,7 @@ import os
 import json
 from pathlib import Path
 
+# pip install grpcio-tools
 # pip install yandexcloud
 # pip install ydb
 # pip install ydb-dbapi
